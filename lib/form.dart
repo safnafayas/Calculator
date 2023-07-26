@@ -68,7 +68,7 @@ class _FormPageState extends State<FormPage> {
                 obscureText: true,
                 obscuringCharacter: '.',
                 keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     suffixIcon: Icon(
                       Icons.icecream,
                       color: Colors.white,
@@ -237,17 +237,12 @@ class _FormPageState extends State<FormPage> {
                   }),
             ),
             Text('Provide Contact details'),
-             DropdownButton(
-                elevation: 15,
-                value: selecteddpt,
-                hint: Text('select departements'),
-               items: departments.map((e)=>DropdownMenuItem(child: Text(e),value: e
-                )).toList(),
-                onChanged: (val) {
-                  setState(() {
-                    selecteddpt = val;
-                  });
-                }),
+            DropdownButton(
+                items: departments.map((e) => DropdownMenuItem(child: Text(e),value: e,)).toList(), onChanged:(val){
+              setState(() {
+                selecteddpt=val!;
+              });
+            })
           ],
         )),
       ),

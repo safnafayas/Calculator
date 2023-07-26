@@ -80,7 +80,38 @@ class Home extends StatelessWidget {
               ElevatedButton(onPressed: (){}, child: Text('Sign In')),  ElevatedButton(onPressed: (){}, child: Text('Sign In')),  ElevatedButton(onPressed: (){}, child: Text('Sign In')),
 
             ],
+          ),
+          RichText(
+            text: const TextSpan(
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
+              children: <TextSpan>[
+                TextSpan(text: 'Hello, '),
+                TextSpan(text: 'world!', style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: ' This is '),
+                TextSpan(text: 'rich text', style: TextStyle(fontStyle: FontStyle.italic)),
+              ],
+            ),
+          ),
+          Text.rich(
+            TextSpan(
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
+              children: <InlineSpan>[
+                TextSpan(text: 'Click '),
+                WidgetSpan(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 2.0),
+                    child: Icon(Icons.link, size: 16.0),
+                  ),
+                ),
+                TextSpan(text: ' to visit our website.'),
+              ],
+            ),
           )
+
+
+
+
+
         ],
       ),
 
